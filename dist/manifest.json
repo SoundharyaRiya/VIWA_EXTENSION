@@ -1,0 +1,28 @@
+{
+  "manifest_version": 3,
+  "name": "VIWA",
+  "version": "1.0",
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Launch VIWA"
+  },
+  "background": {
+    "service_worker": "serviceWorker.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://*/*"],
+      "css": ["contentStyle.css"],
+      "js": ["contentScript.js"]
+    }
+  ],
+  "host_permissions": ["<all_urls>"],
+  "permissions": [
+    "scripting",
+    "storage",
+    "alarms",
+    "activeTab",
+    "declarativeContent",
+    "tabs"
+  ]
+}
